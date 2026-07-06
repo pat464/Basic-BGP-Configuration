@@ -1,0 +1,4 @@
+Output verification for R1
+
+- Use this file to record verification commands and results for R1.
+- Example: `show ip bgp summary`, `show ip route`, `show running-config`.
