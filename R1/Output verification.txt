@@ -1,5 +1,18 @@
 Output verification for R1:
----------------------------
+-----------------------------------
+R1#sh ip bgp
+BGP table version is 2, local router ID is 10.0.12.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
+              r RIB-failure, S Stale
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  10.0.12.0/30     10.0.12.2                0             0 65200 i
+*>                  0.0.0.0                  0         32768 i
+
+------------------------------------
+------------------------------------
+
 R1#sh bgp ipv4 unicast summary
 BGP router identifier 10.0.12.1, local AS number 65100
 BGP table version is 2, main routing table version 2
