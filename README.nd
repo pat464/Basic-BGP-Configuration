@@ -1,0 +1,14 @@
+# Basic BGP Configuration
+
+This workspace contains the following files and folders:
+
+- R1 configuration file
+- R2 configuration file
+-topology diagram
+This file to describe the subnet plan for the topology.
+It includes network prefixes, mask lengths, and router-facing interfaces.
+A /30 point-to-point link using 10.0.12.0/30.
+
+Topology assumption:
+R1 fa0/0: 10.0.12.1/30
+R2 fa0/0: 10.0.12.2/30
