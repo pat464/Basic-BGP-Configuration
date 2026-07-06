@@ -1,4 +1,99 @@
 Output verification for R1
+R1#sh bgp ipv4 unicast summary
+BGP router identifier 10.0.12.1, local AS number 65100
+BGP table version is 2, main routing table version 2
+1 network entries using 120 bytes of memory
+2 path entries using 104 bytes of memory
+3/1 BGP path/bestpath attribute entries using 372 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+Bitfield cache entries: current 1 (at peak 1) using 32 bytes of memory
+BGP using 652 total bytes of memory
+BGP activity 1/0 prefixes, 2/0 paths, scan interval 60 secs
 
-- Use this file to record verification commands and results for R1.
-- Example: `show ip bgp summary`, `show ip route`, `show running-config`.
+Neighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.0.12.2       4 65200       9       9        2    0    0 00:04:31        1
+
+-------------------------------------------
+-------------------------------------------
+
+R1#sh bgp ipv4 unicast neighbors 10.0.12.2
+BGP neighbor is 10.0.12.2,  remote AS 65200, external link
+  BGP version 4, remote router ID 10.0.12.2
+  BGP state = Established, up for 00:08:15
+  Last read 00:00:14, last write 00:00:14, hold time is 180, keepalive interval                                                                              is 60 seconds
+  Neighbor capabilities:
+    Route refresh: advertised and received(old & new)
+    Address family IPv4 Unicast: advertised and received
+  Message statistics:
+    InQ depth is 0
+    OutQ depth is 0
+                         Sent       Rcvd
+    Opens:                  1          1
+    Notifications:          0          0
+    Updates:                1          1
+    Keepalives:            11         11
+    Route Refresh:          0          0
+    Total:                 13         13
+  Default minimum time between advertisement runs is 30 seconds
+
+ For address family: IPv4 Unicast
+  BGP table version 2, neighbor version 2/0
+  Output queue size: 0
+  Index 1, Offset 0, Mask 0x2
+  1 update-group member
+                                 Sent       Rcvd
+  Prefix activity:               ----       ----
+    Prefixes Current:               1          1 (Consumes 52 bytes)
+    Prefixes Total:                 1          1
+    Implicit Withdraw:              0          0
+    Explicit Withdraw:              0          0
+    Used as bestpath:             n/a          0
+    Used as multipath:            n/a          0
+
+                                   Outbound    Inbound
+  Local Policy Denied Prefixes:    --------    -------
+    Total:                                0          0
+  Number of NLRIs in the update sent: max 1, min 1
+
+  Connections established 1; dropped 0
+  Last reset never
+Connection state is ESTAB, I/O status: 1, unread input bytes: 0
+Connection is ECN Disabled, Mininum incoming TTL 0, Outgoing TTL 1
+Local host: 10.0.12.1, Local port: 36098
+Foreign host: 10.0.12.2, Foreign port: 179
+Connection tableid (VRF): 0
+
+Enqueued packets for retransmit: 0, input: 0  mis-ordered: 0 (0 bytes)
+
+Event Timers (current time is 0x179948):
+Timer          Starts    Wakeups            Next
+Retrans            12          0             0x0
+TimeWait            0          0             0x0
+AckHold            12          5             0x0
+SendWnd             0          0             0x0
+KeepAlive           0          0             0x0
+GiveUp              0          0             0x0
+PmtuAger            0          0             0x0
+DeadWait            0          0             0x0
+Linger              0          0             0x0
+ProcessQ            0          0             0x0
+
+iss: 2868923810  snduna: 2868924118  sndnxt: 2868924118     sndwnd:  16077
+irs:  256579501  rcvnxt:  256579809  rcvwnd:      16077  delrcvwnd:    307
+
+SRTT: 239 ms, RTTO: 712 ms, RTV: 473 ms, KRTT: 0 ms
+minRTT: 20 ms, maxRTT: 300 ms, ACK hold: 200 ms
+Status Flags: active open
+Option Flags: nagle
+IP Precedence value : 6
+
+Datagrams (max data segment is 1460 bytes):
+Rcvd: 21 (out of order: 0), with data: 13, total data bytes: 307
+Sent: 20 (retransmit: 0, fastretransmit: 0, partialack: 0, Second Congestion: 0)                                                                             , with data: 13, total data bytes: 307
+ Packets received in fast path: 0, fast processed: 0, slow path: 0
+ Packets send in fast path: 0
+ fast lock acquisition failures: 0, slow path: 0
+
+
