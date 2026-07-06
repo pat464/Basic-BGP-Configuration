@@ -1,4 +1,5 @@
-Output verification for R1
+Output verification for R1:
+---------------------------
 R1#sh bgp ipv4 unicast summary
 BGP router identifier 10.0.12.1, local AS number 65100
 BGP table version is 2, main routing table version 2

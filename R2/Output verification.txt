@@ -18,7 +18,8 @@ Neighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
 10.0.12.1       4 65100     246     246        4    0    0 04:01:25        1
 R2#
 
-
+------------------------------------
+------------------------------------
 
 R2#sh bgp ipv4 unicast neighbors 10.0.12.1
 BGP neighbor is 10.0.12.1,  remote AS 65100, external link
