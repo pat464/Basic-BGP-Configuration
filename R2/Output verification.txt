@@ -11,6 +11,19 @@ Origin codes: i - IGP, e - EGP, ? - incomplete
 *> 10.0.12.0/30     0.0.0.0                  0         32768 i
 *                   10.0.12.1                0             0 65100 i
 
+==================================
+This commands provides advertised routes,
+R2#show bgp ipv4 unicast neighbors 10.0.12.1 advertised-routes
+BGP table version is 2, local router ID is 10.0.12.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
+              r RIB-failure, S Stale
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 10.0.12.0/30     0.0.0.0                  0         32768 i
+
+Total number of prefixes 1
+
 ======================================
 
 R2#show bgp ipv4 unicast 10.0.12.0
