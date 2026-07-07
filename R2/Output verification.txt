@@ -1,5 +1,6 @@
 Output verification for R2:
--------------------------------------
+======================================
+
 R2#sh ip bgp
 BGP table version is 4, local router ID is 10.0.12.2
 Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
@@ -10,8 +11,21 @@ Origin codes: i - IGP, e - EGP, ? - incomplete
 *> 10.0.12.0/30     0.0.0.0                  0         32768 i
 *                   10.0.12.1                0             0 65100 i
 
---------------------------------------
---------------------------------------
+======================================
+
+R2#show bgp ipv4 unicast 10.0.12.0
+BGP routing table entry for 10.0.12.0/30, version 2
+Paths: (2 available, best #2, table Default-IP-Routing-Table)
+  Advertised to update-groups:
+        1
+  65100
+    10.0.12.1 from 10.0.12.1 (10.0.12.1)
+      Origin IGP, metric 0, localpref 100, valid, external
+  Local
+    0.0.0.0 from 0.0.0.0 (10.0.12.2)
+      Origin IGP, metric 0, localpref 100, weight 32768, valid, sourced, local, best
+
+======================================
 
 R2#show bgp ipv4 unicast summary
 BGP router identifier 10.0.12.2, local AS number 65200
@@ -30,8 +44,7 @@ Neighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
 10.0.12.1       4 65100     246     246        4    0    0 04:01:25        1
 R2#
 
---------------------------------------
---------------------------------------
+======================================
 
 R2#sh bgp ipv4 unicast neighbors 10.0.12.1
 BGP neighbor is 10.0.12.1,  remote AS 65100, external link
